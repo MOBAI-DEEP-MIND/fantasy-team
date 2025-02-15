@@ -45,3 +45,10 @@ class Clubs(models.Model):
 class Team(models.Model):
     user = models.ForeignKey(CustomUser,on_delete=models.CASCADE,name='user',editable=False)    
     players = models.ManyToManyField(Players)
+
+class Match(models.Model):
+    goal = models.IntegerField(default=0)    
+    assists = models.IntegerField(default=0)
+    clean_sheets = models.IntegerField(default=0)
+    yellow_card = models.IntegerField(default=0)
+    red_card = models.IntegerField(default=0)
